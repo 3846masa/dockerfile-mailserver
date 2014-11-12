@@ -44,8 +44,9 @@ How to use
 
   Please check below.
 
-6. Delete users
+6. (Delete users)
 
+  If you will delete users, type below.
   ```bash
   delmailuser user@mail.example.com
   ```
