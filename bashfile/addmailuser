@@ -37,7 +37,7 @@ echo "${MAILADDR}    ${USERINFO[1]}/${USERINFO[0]}/" >> /etc/postfix/vmaps
 postmap /etc/postfix/vmaps
 
 mkdir -p "/home/vmail/${USERINFO[1]}/${USERINFO[0]}/"{new,cur,tmp}
-chmod 550 /home/vmail/ -R
+chmod 660 /home/vmail/ -R
 chown vmail.vmail /home/vmail/ -R
 
 postfix reload > /dev/null 2>&1

@@ -25,7 +25,7 @@ POSTFIX_OPT=`echo -e "${POSTFIX_OPT}" | sed -e "s/^mydomain.*$/mydomain = ${DOMA
 echo -e "${POSTFIX_OPT}" > /etc/postfix/main.cf
 
 chown vmail.vmail /home/vmail -R
-chmod 550 /home/vmail -R
+chmod 660 /home/vmail -R
 postfix start
 dovecot
 
