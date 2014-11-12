@@ -24,10 +24,11 @@ How to use
   docker build -t 3846masa/mailserver .
   ```
 
-3. Run
+3. Make folder and Run
 
   ```bash
-  docker run -it -p 110:110 -p 143:143 -p 587:587 --name "mailserver" 3846masa/mailserver
+  mkdir /mailfolder # Anywhere
+  docker run -it -v /mailfolder:/home/vmail -p 25:25 -p 110:110 -p 143:143 -p 587:587 --name "mailserver" 3846masa/mailserver
   Hostname: mail.example.com
   Domainname: example.com
   ```

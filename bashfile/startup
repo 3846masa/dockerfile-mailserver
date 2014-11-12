@@ -3,14 +3,16 @@
 
 trap 'echo ""; stty echo; exit -1;' SIGINT
 
-echo -n "Hostname: "; read HOST; echo "";
+echo -n "Press enter to continue... "; read;
+
+echo -n "Hostname: "; read HOST;
 
 if ! [[ $HOST =~ .+\.[a-zA-Z]+$ ]]; then
   echo >&2 "Invalid value."
   exit 1
 fi
 
-echo -n "Domainname: "; read DOMAIN; echo "";
+echo -n "Domainname: "; read DOMAIN;
 
 if ! [[ $DOMAIN =~ .+\.[a-zA-Z]+$ ]]; then
   echo >&2 "Invalid value."
@@ -22,6 +24,8 @@ POSTFIX_OPT=`echo -e "${POSTFIX_OPT}" | sed -e "s/^mydomain.*$/mydomain = ${DOMA
 
 echo -e "${POSTFIX_OPT}" > /etc/postfix/main.cf
 
+chown vmail.vmail /home/vmail -R
+chmod 550 /home/vmail -R
 postfix start
 dovecot
 

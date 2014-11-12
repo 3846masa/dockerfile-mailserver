@@ -29,7 +29,7 @@ if [[ $PASSWD != $PASSWD_RETYPE ]]; then
 fi
 
 PASSWD_MD5=$(echo -e "${PASSWD}\n${PASSWD}" | doveadm pw)
-echo "${MAILADDR}:${PASSWD_MD5}:5000:5000:::/bin/false::" >> /etc/dovecot/passwd
+echo "${MAILADDR}:${PASSWD_MD5}:5000:5000" >> /etc/dovecot/passwd
 
 IFS='@' eval 'USERINFO=($MAILADDR)'
 echo "${MAILADDR}    ${USERINFO[1]}/${USERINFO[0]}/" >> /etc/postfix/vmaps
@@ -37,7 +37,7 @@ echo "${MAILADDR}    ${USERINFO[1]}/${USERINFO[0]}/" >> /etc/postfix/vmaps
 postmap /etc/postfix/vmaps
 
 mkdir -p "/home/vmail/${USERINFO[1]}/${USERINFO[0]}/"{new,cur,tmp}
-chmod 755 /home/vmail/ -R
+chmod 550 /home/vmail/ -R
 chown vmail.vmail /home/vmail/ -R
 
 postfix reload > /dev/null 2>&1
