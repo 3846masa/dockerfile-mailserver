@@ -13,7 +13,7 @@ How to use
   ```
   OR
   ```bash
-  curl -O https://github.com/3846masa/dockerfile-mailserver/archive/master.zip
+  curl -O -L https://github.com/3846masa/dockerfile-mailserver/archive/master.zip
   unzip master.zip
   ```
 
