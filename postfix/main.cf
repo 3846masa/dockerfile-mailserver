@@ -687,11 +687,11 @@ smtpd_sasl_auth_enable = yes
 smtpd_sasl_type = dovecot
 smtpd_sasl_path = private/auth
 smtpd_sasl_security_options = noanonymous
-smtpd_sasl_local_domain = $myhostname
+smtpd_sasl_local_domain = $mydomain
 smtpd_recipient_restrictions = permit_mynetworks,permit_sasl_authenticated,reject_unauth_destination
 mailbox_size_limit = 1073741824
 
-virtual_mailbox_domains = $myhostname
+virtual_mailbox_domains = $mydomain
 virtual_mailbox_base = /home/vmail
 virtual_mailbox_maps = hash:/etc/postfix/vmaps
 virtual_minimum_uid = 1000
