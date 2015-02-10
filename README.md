@@ -36,7 +36,7 @@ How to use
 4. Add users
 
   ```bash
-  addmailuser user@mail.example.com
+  addmailuser user@example.com
   Enter user password: 
   Retype user password: 
   ```
@@ -49,7 +49,7 @@ How to use
 
   If you will delete users, type below.
   ```bash
-  delmailuser user@mail.example.com
+  delmailuser user@example.com
   ```
 
 7. Run as background
@@ -67,7 +67,7 @@ How to use
 Mail client settings
 --------------------
 
-- Username: user@mail.example.com
+- Username: user@example.com
 - Password: [Password]
 - SSL and TLS is not supported.
 
